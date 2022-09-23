@@ -1,50 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign up now!</title>
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/process" type="text/css"/>
-</head>
-<body>
-    <aside>
-        <div class="ribbon">
-            <img src="./images/NERV-logo.png" alt="NERV Logo" class="logo">
-            <p class="logo-name">NERV</p>
-        </div>
-    </aside>
-    <main>
-        <p class="hero-text"><strong>
-            Extreme situations call for extreme measures <br>
-            Do what you know is right.
-        </strong></p>
-        <form action="POST">
-            <legend id="signup-legend">Let's do this!</legend>
-            <div class="form-main">
-                <label for="first-name">FIRST NAME</label>
-                <input type="text" name="first-name" id="first-name" required maxlength="20">
-
-                <label for="last-name">LAST NAME</label>
-                <input type="text" name="last-name" id="last-name" required maxlength="20">
-
-                <label for="mail">EMAIL</label>
-                <input type="email" name="mail" id="mail" required maxlength="30">
-
-                <label for="phone-number">PHONE NUMBER</label>
-                <input type="tel" name="phone-number" id="phone-number" required pattern="pattern="\d{3}-\d{2}-\d{3}"">
-
-                <label for="password">PASSWORD</label>
-                <input type="password" name="password" id="password" required maxlength="30" minlength="6">
-
-                <label for="password-confirm">CONFIRM PASSWORD</label>
-                <input type="password" id="password-confirm" required>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sign up now!</title>
+        <link rel="stylesheet" href="normalize.css" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="main.js" defer></script>
+        <link
+            rel="stylesheet"
+            media="screen"
+            href="https://fontlibrary.org//face/process"
+            type="text/css"
+        />
+    </head>
+    <body>
+        <aside>
+            <div id="ribbon">
+                <img src="./images/NERV-logo.png" alt="NERV Logo" id="logo" />
+                <p id="logo-name">NERV</p>
             </div>
-            <button type="submit">Join Us</button>
-        </form>
-    </main>
-</body>
+        </aside>
+        <main>
+            <p class="hero-text">
+                <strong>
+                    Extreme situations call for extreme measures <br />
+                    Do what you know is right.
+                </strong>
+            </p>
+            <form action="POST" id="signup">
+                <legend id="signup-legend">
+                    <strong>Let's do this!</strong>
+                </legend>
+                <div id="form-main">
+                    <div class="first-name input">
+                        <label for="first-name">FIRST NAME</label>
+                        <input
+                            type="text"
+                            name="first-name"
+                            id="first-name"
+                            required
+                            maxlength="20"
+                        />
+                    </div>
+
+                    <div class="last-name input">
+                        <label for="last-name">LAST NAME</label>
+                        <input
+                            type="text"
+                            name="last-name"
+                            id="last-name"
+                            required
+                            maxlength="20"
+                        />
+                    </div>
+
+                    <div class="email input">
+                        <label for="mail">EMAIL</label>
+                        <input
+                            type="email"
+                            name="mail"
+                            id="mail"
+                            required
+                            maxlength="30"
+                        />
+                    </div>
+
+                    <div class="phone-number input">
+                        <label for="phone-number">PHONE NUMBER</label>
+                        <input type="tel" name="phone-number" id="phone-number"
+                        required pattern="pattern="\d{3}-\d{2}-\d{3}"">
+                    </div>
+
+                    <div class="password input">
+                        <label for="password">PASSWORD</label>
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            required
+                            maxlength="30"
+                            minlength="6"
+                        />
+                    </div>
+
+                    <div class="password-confirm input">
+                        <label for="password-confirm">CONFIRM PASSWORD</label>
+                        <input type="password" id="password-confirm" required />
+                    </div>
+                </div>
+
+                <button type="submit">Join Us</button>
+            </form>
+        </main>
+    </body>
 </html>
