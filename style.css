@@ -4,8 +4,11 @@
 
 * {
     color: var(--main-color);
-    font-family: "Times New Roman", Times, serif;
-    font-weight: bold;
+    font-family: "XoloniumRegular", "Times New Roman", Times, serif;
+    font-size: clamp(4px, 4vw, 16px);
+    /* font-weight: bold; */
+    box-sizing: border-box;
+    margin: 0px;
 }
 
 body {
@@ -16,13 +19,29 @@ body {
     background-size: cover;
 }
 
+aside,
+main {
+    min-height: 100vh;
+}
+
 main {
     background: rgba(0, 0, 0, 0.5);
     box-shadow: 0 8px 32px 0 rgba(120, 0, 0, 0.37);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     border: 1px solid rgba(0, 0, 0, 0.18);
-    padding: 3vw;
+    /* HACK ↓ */
+    padding: calc(10vw - calc(clamp(25px, 10vw, 100px) / 2)) 3vw 3vw 3vw;
+    display: flex;
+    flex-direction: column;
+    gap: 10vw;
+}
+
+#hero-text {
+    padding-left: 25px;
+    border-left: 5px solid var(--main-color);
+    font-size: clamp(4px, 4vw, 32px);
+    font-style: italic;
 }
 
 #form-main {
@@ -34,16 +53,10 @@ main {
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     padding: 20px;
 }
 
-@media (max-width: 600px) {
-    #form-main {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
 
 .input {
     display: flex;
@@ -53,22 +66,90 @@ main {
 }
 
 aside {
-    padding: 20vh 0;
+    padding: 15vh 0px 1vh 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #ribbon {
     background: rgb(0%, 0%, 0%, 75%);
+    width: 100%;
     display: flex;
     flex-flow: row nowrap;
+    justify-content: center;
     align-items: center;
 }
 
 #logo {
-    width: clamp(50px, 20vw, 200px);
+    width: clamp(50px, 15vw, 175px);
     height: auto;
     margin: 3vw;
 }
 
+#ribbon-text {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+}
+
 #logo-name {
-    font-size: max(16px, 5vw);
+    font-weight: bold;
+    font-size: max(20px, 5vw);
+    border-bottom: 0.3vw solid var(--main-color);
+}
+#logo-sub {
+    width: 100%;
+    font-size: max(0.95vw, 0.6px);
+    margin-top: 0.5vw;
+}
+
+aside > footer {
+    margin: 0px 1vw;
+}
+
+@media (max-width: 600px) {
+    
+    body {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    main {
+        scroll-snap-type: y mandatory;
+        scroll-snap-align: start;
+        gap: 5vw;
+    }
+
+    #hero-text {
+        padding-left: 10px;
+        border-left: 5px solid var(--main-color);
+        font-size: clamp(4px, 10vw, 32px);
+    }
+
+    #form-main {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    aside {
+        scroll-snap-type: y mandatory;
+        background-image: url(./images/background.jpg);
+        background-size: cover;
+        scroll-snap-align: start;
+    }
+
+    #logo {
+        width: clamp(50px, 30vw, 200px);
+    }
+
+    #logo-name {
+        font-size: max(20px, 16vw);
+        border-bottom: 0.3vw solid var(--main-color);
+        border-bottom: 1vw solid var(--main-color);
+    }
+    
+    #logo-sub {
+        font-size: max(3vw, 0.6px);
+        margin-top: 0.5vw;
+    }
 }

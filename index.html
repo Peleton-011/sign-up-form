@@ -11,7 +11,7 @@
         <link
             rel="stylesheet"
             media="screen"
-            href="https://fontlibrary.org//face/process"
+            href="https://fontlibrary.org//face/xolonium"
             type="text/css"
         />
     </head>
@@ -19,19 +19,24 @@
         <aside>
             <div id="ribbon">
                 <img src="./images/NERV-logo.png" alt="NERV Logo" id="logo" />
-                <p id="logo-name">NERV</p>
+                <div id="ribbon-text">
+                    <p id="logo-name">NERV</p>
+                    <p id="logo-sub">To protect. To attack. To explore.</p>
+                </div>
             </div>
+            <footer>
+                Under the supervision of
+                <a href="https://www.un.org/" target="_blank">the UN</a>
+            </footer>
         </aside>
         <main>
-            <p class="hero-text">
-                <strong>
-                    Extreme situations call for extreme measures <br />
-                    Do what you know is right.
-                </strong>
-            </p>
+            <blockquote id="hero-text">
+                Extreme situations call for extreme measures.<br />
+                Do what you know is right.
+            </blockquote>
             <form action="POST" id="signup">
                 <legend id="signup-legend">
-                    <strong>Let's do this!</strong>
+                    Let's do this!
                 </legend>
                 <div id="form-main">
                     <div class="first-name input">
@@ -89,9 +94,9 @@
                         <label for="password-confirm">CONFIRM PASSWORD</label>
                         <input type="password" id="password-confirm" required />
                     </div>
+                    <button type="submit">Join Us</button>
                 </div>
 
-                <button type="submit">Join Us</button>
             </form>
         </main>
     </body>
