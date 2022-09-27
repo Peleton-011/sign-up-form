@@ -15,11 +15,14 @@ function validate(field, regex) {
     if (regex == null) {
         // No regex found when expected
         if (field.attributes.id.value !== "password-confirm") {
-            console.log("Error, expected RegEx not found")
+            console.log("Error, expected RegEx not found");
             return;
         }
         // Password confirmation
-        field.className = (field.value === document.getElementById("password").value) ? "valid" : "invalid"
+        field.className =
+            field.value === document.getElementById("password").value
+                ? "valid"
+                : "invalid";
         return;
     }
     field.className = regex.test(field.value) ? "valid" : "invalid";

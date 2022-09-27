@@ -36,9 +36,7 @@
                 Do what you know is right.
             </blockquote>
             <form action="POST" id="signup">
-                <legend id="signup-legend">
-                    Let's do this!
-                </legend>
+                <legend id="signup-legend">Let's do this!</legend>
                 <div id="form-main">
                     <div class="first-name input">
                         <label for="first-name">First Name:</label>
@@ -48,6 +46,7 @@
                             id="first-name"
                             required
                             maxlength="20"
+                            placeholder="John"
                         />
                         <p>First name must only include letters</p>
                     </div>
@@ -60,6 +59,7 @@
                             id="last-name"
                             required
                             maxlength="20"
+                            placeholder="Doe"
                         />
                         <p>Last name must only include letters</p>
                     </div>
@@ -72,15 +72,26 @@
                             id="mail"
                             required
                             maxlength="30"
+                            placeholder="johndoe@nerv.jp"
                         />
-                        <p>Email must be a valid address, e.g. johndoe@nerv.jp</p>
+                        <p>
+                            Email must be a valid address, e.g. johndoe@nerv.jp
+                        </p>
                     </div>
 
                     <div class="phone-number input">
                         <label for="phone-number">Phone Number:</label>
-                        <input type="tel" name="phone_number" id="phone-number"
-                        required>
-                        <p>Phone number must be a valid spanish number or have the correct prefix</p>
+                        <input
+                            type="tel"
+                            name="phone_number"
+                            id="phone-number"
+                            required
+                            placeholder="+34 690-420-011"
+                        />
+                        <p>
+                            Phone number must be a valid number with the correct
+                            prefix
+                        </p>
                     </div>
 
                     <div class="password input">
@@ -93,17 +104,24 @@
                             maxlength="30"
                             minlength="8"
                         />
-                        <p>Password must be alphanumeric (@, _ and - are also allowed) and be 8 - 20 characters</p>
+                        <p>
+                            Password must be alphanumeric (@, _ and - are also
+                            allowed) and be 8 - 20 characters
+                        </p>
                     </div>
 
                     <div class="password-confirm input">
                         <label for="password-confirm">Confirm Password:</label>
-                        <input type="password" name="password_confirmation" id="password-confirm" required />
+                        <input
+                            type="password"
+                            name="password_confirmation"
+                            id="password-confirm"
+                            required
+                        />
                         <p>Passwords must match</p>
                     </div>
                     <button type="submit">Join Us</button>
                 </div>
-
             </form>
         </main>
     </body>
