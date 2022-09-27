@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="normalize.css" />
         <link rel="stylesheet" href="style.css" />
         <script src="main.js" defer></script>
+        <script src="validate.js" defer></script>
         <link
             rel="stylesheet"
             media="screen"
@@ -43,39 +44,43 @@
                         <label for="first-name">First Name:</label>
                         <input
                             type="text"
-                            name="first-name"
+                            name="first_name"
                             id="first-name"
                             required
                             maxlength="20"
                         />
+                        <p>First name must only include letters</p>
                     </div>
 
                     <div class="last-name input">
                         <label for="last-name">Last Name:</label>
                         <input
                             type="text"
-                            name="last-name"
+                            name="last_name"
                             id="last-name"
                             required
                             maxlength="20"
                         />
+                        <p>Last name must only include letters</p>
                     </div>
 
                     <div class="email input">
                         <label for="mail">Email Address:</label>
                         <input
                             type="email"
-                            name="mail"
+                            name="email"
                             id="mail"
                             required
                             maxlength="30"
                         />
+                        <p>Email must be a valid address, e.g. johndoe@nerv.jp</p>
                     </div>
 
                     <div class="phone-number input">
                         <label for="phone-number">Phone Number:</label>
-                        <input type="tel" name="phone-number" id="phone-number"
-                        required pattern="pattern="\d{3}-\d{2}-\d{3}"">
+                        <input type="tel" name="phone_number" id="phone-number"
+                        required>
+                        <p>Phone number must be a valid spanish number or have the correct prefix</p>
                     </div>
 
                     <div class="password input">
@@ -86,13 +91,15 @@
                             id="password"
                             required
                             maxlength="30"
-                            minlength="6"
+                            minlength="8"
                         />
+                        <p>Password must be alphanumeric (@, _ and - are also allowed) and be 8 - 20 characters</p>
                     </div>
 
                     <div class="password-confirm input">
                         <label for="password-confirm">Confirm Password:</label>
-                        <input type="password" id="password-confirm" required />
+                        <input type="password" name="password_confirmation" id="password-confirm" required />
+                        <p>Passwords must match</p>
                     </div>
                     <button type="submit">Join Us</button>
                 </div>

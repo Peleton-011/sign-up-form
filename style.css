@@ -24,8 +24,9 @@ body {
     background-image: url(./images/background.jpg);
     background-size: cover;
 
-    scroll-snap-type: both mandatory;
-    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    scroll-snap-type: mandatory;
+    overflow: auto;
 }
 
 aside,
@@ -97,6 +98,9 @@ main {
 }
 
 input {
+    width: 100%;
+    margin: 0px auto;
+
     color: var(--white);
     background-color: var(--black);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
@@ -112,6 +116,26 @@ input:focus {
     background-color: var(--black);
     outline-style: ridge;
     outline-width: 2px;
+}
+
+input.valid {
+    color: green;
+}
+
+input.invalid {
+    color: purple;
+}
+
+input + p {
+    color:orange;
+    opacity: 0;
+    height: 0;
+}
+
+input.invalid + p {
+    opacity: 1;
+    font-size: 0.75rem;
+    height: auto;
 }
 
 .input {
