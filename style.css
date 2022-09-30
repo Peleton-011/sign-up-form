@@ -2,7 +2,7 @@
     --main-color: #e31e24;
     --black: #071013;
     --white: #ebebd3;
-    --secondary-color: #F18F01;
+    --secondary-color: #f18f01;
 }
 
 * {
@@ -130,7 +130,7 @@ input.invalid:not(:focus) {
     animation: shake 0.25s ease-in-out 0s 2;
 }
 
-input.invalid:focus{
+input.invalid:focus {
     outline-color: var(--secondary-color);
 }
 
@@ -246,8 +246,16 @@ aside > footer {
 }
 
 @keyframes shake {
-    0% { margin-left: 0rem; }
-    25% { margin-left: 0.5rem; }
-    75% { margin-left: -0.5rem; }
-    100% { margin-left: 0rem; }
-  }
+    0% {
+        margin-left: 0rem;
+    }
+    25% {
+        margin-left: 0.5rem;
+    }
+    75% {
+        margin-left: -0.5rem;
+    }
+    100% {
+        margin-left: 0rem;
+    }
+}
