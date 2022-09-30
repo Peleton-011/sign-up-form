@@ -3,8 +3,8 @@ const inputs = document.querySelectorAll("input");
 // Patterns
 const patterns = {
     phone_number: /^\d{9}$|^\+\d{11}$/,
-    first_name: /^[a-z\d]{1,20}$/i,
-    last_name: /^[a-z\d]{1,20}$/i,
+    first_name: /^[a-z]{1,20}$/i,
+    last_name: /^[a-z]{1,20}$/i,
     password: /^[\d\w@-]{8,20}$/i,
     email: /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/,
     //           yourname @ domain     . com          ( .uk )
@@ -30,7 +30,7 @@ function validate(field, regex) {
 
 // Keyup events call the validate() func
 inputs.forEach((input) => {
-    input.addEventListener("keyup", (e) => {
+    input.addEventListener("input", (e) => {
         validate(e.target, patterns[e.target.attributes.name.value]);
     });
 });
