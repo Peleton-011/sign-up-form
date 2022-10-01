@@ -1,5 +1,6 @@
 :root {
     --main-color: #e31e24;
+    --highlight: #c00c12;
     --black: #071013;
     --white: #ebebd3;
     --secondary-color: #f18f01;
@@ -13,13 +14,11 @@
     box-sizing: border-box;
     margin: 0px;
 
-    /* transition-property: all; */
-    /* transition-duration: 0.1s; */
-    /* transition-timing-function: ease; */
+    transition: all 0.15s ease;
 }
 
 body {
-    min-height: 100vh;
+    height: 100vh;
     display: grid;
     grid-template-columns: 2fr 3fr;
     background-image: url(./images/background.jpg);
@@ -30,13 +29,9 @@ body {
     overflow: auto;
 }
 
-aside,
 main {
-    min-height: 100vh;
     scroll-snap-align: start;
-}
 
-main {
     background: rgba(0, 0, 0, 0.5);
     box-shadow: 0 8px 32px 0 rgba(120, 0, 0, 0.37);
     backdrop-filter: blur(6px);
@@ -85,6 +80,8 @@ main {
     border: 1px solid rgba(255, 255, 255, 0.18);
     height: 2rem;
     grid-column: 2 / span 2;
+
+    transition: all 0.2s linear;
 }
 
 #form-main > button:hover {
@@ -128,6 +125,7 @@ input.invalid {
 
 input.invalid:not(:focus) {
     animation: shake 0.25s ease-in-out 0s 2;
+    box-shadow: 0 0 4px var(--secondary-color);
 }
 
 input.invalid:focus {
@@ -153,6 +151,9 @@ input.invalid + p {
 }
 
 aside {
+    min-height: 100vh;
+    scroll-snap-align: start;
+
     padding: 15vh 0px 1vh 0px;
     display: flex;
     flex-direction: column;
@@ -192,8 +193,14 @@ aside {
     margin-top: 0.5vw;
 }
 
-aside > footer {
-    margin: 0px 1vw;
+aside > footer,
+aside > footer > a {
+    font-size: max(0.95vw, 0.6px);
+}
+
+a {
+    color: var(--mai);
+    font-style: normal;
 }
 
 @media (max-width: 600px) {
@@ -242,6 +249,10 @@ aside > footer {
     #logo-sub {
         font-size: max(3vw, 0.6px);
         margin-top: 0.5vw;
+    }
+    aside > footer,
+    aside > footer > a {
+        font-size: max(3vw, 0.6px);
     }
 }
 
