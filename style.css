@@ -199,8 +199,17 @@ aside > footer > a {
 }
 
 a {
-    color: var(--mai);
+    transition: all 0.05s;
+    color: var(--secondary-color);
     font-style: normal;
+}
+
+a:hover {
+    color: var(--white);
+}
+
+a:active {
+    color: var(--main-color);
 }
 
 @media (max-width: 600px) {
